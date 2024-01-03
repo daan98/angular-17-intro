@@ -1,1 +1,42 @@
-<p>control-flow works!</p>
+<!-- ngIf @if -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+
+        <button
+            class="p-2 bg-blue-500 rounded text-white"
+            (click)="toggleContent()"
+        >
+            Click me!
+        </button>
+
+        @if (showContent()) {
+            <p>Hola Mundo</p>
+        } @else {
+            <p>**********</p>
+        }
+    </div>
+
+    <!-- @switch -->
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-2xl font-bold mb-5">switch: {{ grades() }} </h2>
+
+        @switch (grades()) {
+            @case ('A') {
+                <p>Felicidades sacaste la calificación más alta</p>
+            }
+            @case ('B') {
+                <p>Felicidades tu calificación es buena</p>
+            }
+            @case ('C') {
+                <p>Echale ganas, para la próxima puedes salir mejor.</p>
+            }
+            @case ('D') {
+                <p>Te recomendamos que revises los temas vistos en el exámen </p>
+            }
+            @default {
+                <p><span class="text-red-700 font-bold">Reprobado.</span> Necesitas volver a tomar el exámen</p>
+            }
+        }
+    </div>
+</section>

@@ -1,1 +1,89 @@
-<p>defer-options works!</p>
+<shared-title [title]="pageTitle" />
+
+<section>
+    <h1 class="text-xl">Interacciones</h1>
+    <hr class="my-2">
+
+    @defer (on interaction) {
+        <shared-heavy-loaders-fast cssClass="bg-blue-500 h-20 text-center">
+            <span class="text-white font-bold">On Interaction</span>
+        </shared-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-red-100 font-bold">
+            Click en el contenedor
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="my-2">
+
+    <button
+        #btnRef
+        class="p-2 bg-blue-500 hover:bg-blue-700 transition-all rounded text-white my-2"
+    >
+        Click me!
+    </button>
+
+    @defer (on interaction(btnRef)) {
+        <shared-heavy-loaders-fast cssClass="bg-cyan-500 h-20 text-center">
+            <span class="text-black font-bold">On Interaction with button</span>
+        </shared-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-red-100 font-bold">
+            Click en el botón
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="my-2">
+
+    @defer (on hover) {
+        <shared-heavy-loaders-fast cssClass="bg-green-500 h-20 text-center">
+            <span class="text-black font-bold">On Hover</span>
+        </shared-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-red-100 font-bold">
+            posicionate en este contenedor
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="my-2">
+
+    @defer (on immediate) {
+        <shared-heavy-loaders-fast cssClass="bg-purple-500 h-20 text-center">
+            <span class="text-white font-bold">Immediate</span>
+        </shared-heavy-loaders-fast>
+    }
+</section>
+
+<section>
+    <hr class="my-2">
+
+    @defer (on timer(2000)) {
+        <shared-heavy-loaders-fast cssClass="bg-pink-500 h-20 text-center">
+            <span class="text-white font-bold">On Timer</span>
+        </shared-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-red-100 font-bold">
+            Espere 2 segundos
+        </div>
+    }
+</section>
+
+<section>
+    <hr class="my-2">
+
+    @defer (on hover; prefetch on idle) {
+        <shared-heavy-loaders-fast cssClass="bg-red-500 h-20 text-center">
+            <span class="text-white font-bold">On Hover, idle</span>
+        </shared-heavy-loaders-fast>
+    } @placeholder {
+        <div class="w-full h-20 bg-red-100 font-bold">
+            Posicionate en este contenedor
+        </div>
+    }
+</section>

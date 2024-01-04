@@ -7,7 +7,7 @@ import { TitleComponent } from '@shared/title/title.component';
   template: `
     <shared-title [title]="pageTitle" />
 
-    <section class="flex justify-start">
+    <section class="flex justify-end">
       <img 
         srcset="https://picsum.photos/id/237/200/300"
         alt="picsum"
@@ -18,12 +18,12 @@ import { TitleComponent } from '@shared/title/title.component';
     </section>
 
     <div 
-      class="bg-blue-500 w-56 h-56"
-      style="view-transition-name: hero2;"
+        class="fixed bottom-16 right-10 rounded bg-blue-800 w-32 h-32"
+        style="view-transition-name: hero2;"
     ></div>
   `,
   styles: ``
 })
 export default class ViewTransitionComponent {
-  public pageTitle : string = "View Transition 1"
+  public pageTitle : string = "View Transition 2"
 }

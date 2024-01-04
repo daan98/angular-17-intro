@@ -23,22 +23,22 @@ export const routes: Routes = [
             {
                 path: 'defer-views',
                 title: 'Defer Views',
-                loadChildren: () => import('./dashboard/pages/defer-views/defer-views.component')
+                loadComponent: () => import('./dashboard/pages/defer-views/defer-views.component')
             },
             {
                 path: 'user/:id',
                 title: 'User',
-                loadChildren: () => import('./dashboard/pages/user/user.component')
+                loadComponent: () => import('./dashboard/pages/user/user.component')
             },
             {
                 path: 'user-list',
                 title: 'Users List',
-                loadChildren: () => import('./dashboard/pages/users/users.component')
+                loadComponent: () => import('./dashboard/pages/users/users.component')
             },
             {
                 path: 'view-transition',
                 title: 'View Transition',
-                loadChildren: () => import('./dashboard/pages/view-transition/view-transition.component')
+                loadComponent: () => import('./dashboard/pages/view-transition/view-transition.component')
             },
             {
                 path: '**',

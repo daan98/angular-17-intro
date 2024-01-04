@@ -1,3 +1,5 @@
+<shared-title [title]="pageTitle" />
+
 <!-- ngIf @if -->
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
     <div class="bg-white rounded shadow p-10">
@@ -38,5 +40,33 @@
                 <p><span class="text-red-700 font-bold">Reprobado.</span> Necesitas volver a tomar el exámen</p>
             }
         }
+    </div>
+
+    <!-- @for -->
+    <div class="bg-white rounded shadow p-10">
+        <h2 class="text-2xl font-bold mb-5">for: </h2>
+
+        <ul>
+            @for (framework of frameworks(); track i;
+            let i = $index, even = $even, odd = $odd, first = $first, last = $last, count = $count) {
+                <li
+                    [class]="{
+                        'bg-red-100': even && !first && !last,
+                        'bg-cyan-100': odd && !first && !last,
+                        'bg-blue-100': first || last,
+                    }"
+                >
+                    {{ framework }}/{{ count }}
+                </li>
+            } @empty {}
+        </ul>
+
+        <ul>
+            @for (framework of emptyFrameworks(); track $index) {
+                <li>{{ framework }}</li>
+            } @empty {
+                <li>No haay frameworks disponibles</li>
+            }
+        </ul>
     </div>
 </section>
